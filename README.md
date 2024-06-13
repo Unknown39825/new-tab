@@ -1,4 +1,4 @@
-# EDG New Tab Page
+# New Tab Page
 
 This is a simple page you can use for quick navigation to  relevant links.
 
