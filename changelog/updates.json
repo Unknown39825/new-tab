@@ -1,0 +1,21 @@
+{
+    "1.0":[
+        "Basic Static Page",
+        "https://chrome.google.com/webstore/detail/fast-new-tab-redirect/ohnfdmfkceojnmepofncbddpdicdjcoi?hl=en"
+    ],
+    "1.1":[
+        "Basic static page with only one editable section",
+        "Searchable by pressing ALT key"
+    ],
+    "1.2":[
+        "Ability to edit entire page",
+        "Download and upload configration",
+        "Modify the Config.json file by downloading it and uploading it again"
+    ],
+    "1.3":[
+        "Automatic Icon assignment",
+        "Add new Panels",
+        "Icons configration in config.json",
+        "Theme configration enabled"
+    ]
+}

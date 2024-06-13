@@ -1,0 +1,77 @@
+{
+  "components": [
+    {
+      "title": "Section 1",
+      "link": "fa-link",
+      "items": [
+        {
+          "text": "Item 1",
+          "link": "fa-link"
+        },
+        {
+          "text": "Item 2",
+          "link": "fa-link"
+        },
+
+        {
+          "isHtml": true,
+          "content": "<hr class=\"sub-content\">"
+        },
+        {
+          "text": "Item 3",
+          "link": "fa-link"
+        }
+      ]
+    },
+    {
+      "title": "Section 2",
+      "gridItems": 2,
+      "link": "fa-link",
+      "items": [
+        {
+          "text": "Item 1",
+          "link": "fa-link"
+        },
+        {
+          "text": "Item 2",
+          "link": "fa-link"
+        },
+
+        {
+          "text": "Item 3",
+          "link": "fa-link"
+        }
+      ]
+    },
+    {
+      "title": "Section 3",
+      "gridItems": 2,
+      "link": "fa-link",
+      "items": [
+        {
+          "text": "Item 1",
+          "link": "fa-link"
+        },
+        {
+          "text": "Item 2",
+          "link": "fa-link"
+        },
+
+        {
+          "text": "Item 3",
+          "link": "fa-link"
+        }
+      ]
+    }
+  ],
+  "linkconfig": {
+    "confluence": "fa-atlassian",
+    "atlassian": "fa-atlassian",
+    "github": "fa-github",
+    "sharepoint": "fa-sharepoint",
+    "jira": "fa-jira",
+    "gecko": "fa-bug",
+    "yammer": "fa-comments",
+    "default": "fa-link"
+  }
+}
