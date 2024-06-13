@@ -53,7 +53,7 @@ class CustomColumn extends HTMLElement {
                     <button id="removeComponent" class="buttonCustom buttonCustomVisible">
                     <i class="fa-solid fa-trash deleteIcon"></i>
                     </button>
-					<hr>
+					<hr class="sub-content">
 				</div>
 
                 <div class="column-content">

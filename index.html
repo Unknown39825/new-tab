@@ -25,22 +25,22 @@
 	<script src="./components/column.js" type="module"></script>
 </head>
 
-<body unselectable="on" >
+<body unselectable="on">
 
 	<button class="buttonCustom1 themeWrapper" onclick="toggleTheme()">
 		<i class="fa-solid fa-moon fa-lg"></i>
 		<i class="fa-solid fa-sun fa-lg"></i>
 	</button>
-	
-
-	<div id="container">
-		<div id="page">
-			<i id="logo" class="fa-solid fa-chalkboard-user"></i>
 
 
-			<div class="topHeader">
-				<div class="header" id="header2">
-					<!-- <form class="form-search" action="" method="get" id="inside_search">
+
+	<i id="logo" class="fa-solid fa-chalkboard-user"></i>
+	<div id="page">
+
+
+		<div class="topHeader">
+			<div class="header" id="header2">
+				<!-- <form class="form-search" action="" method="get" id="inside_search">
 						<input type="text" name="k" class="search-query" placeholder="Inside Search" />
 					</form> -->
 
@@ -48,41 +48,31 @@
 
 
 
-				</div>
-				<div class="configButtons">
-					<button onclick="loadDefaults()" class="buttonCustom1"><i class="fa-solid fa-arrows-rotate"></i>Load Default</button>
-					<button onclick="downloadConfig()" class="buttonCustom1"> <i class="fa-solid fa-download"></i>
-						Download config </button>
-					<button onclick="openUploadConfig()" class="buttonCustom1"><i class="fa-solid fa-upload"></i> Upload
-						config</button>
-
-					<button onclick="toggleRemoveButtons()" style="display: inline" class="buttonCustom"> <i class="fa-solid fa-trash deleteIcon"></i>Remove
-						Links</button>
-
-					<button onclick="showAddPanel()" style="display: inline" class="buttonCustom"> <i class="fa-solid fa-plus"></i> Add Panel</button>
-				</div>
 			</div>
+			<div class="configButtons">
+				<button onclick="loadDefaults()" class="buttonCustom1"><i class="fa-solid fa-arrows-rotate"></i>Load
+					Default</button>
+				<button onclick="downloadConfig()" class="buttonCustom1"> <i class="fa-solid fa-download"></i>
+					Download config </button>
+				<button onclick="openUploadConfig()" class="buttonCustom1"><i class="fa-solid fa-upload"></i> Upload
+					config</button>
 
+				<button onclick="toggleRemoveButtons()" style="display: inline" class="buttonCustom"> <i
+						class="fa-solid fa-trash deleteIcon"></i>Remove
+					Links</button>
 
-
-
-
-
-
-			<div id="placeholder">
-
+				<button onclick="showAddPanel()" style="display: inline" class="buttonCustom"> <i
+						class="fa-solid fa-plus"></i> Add Panel</button>
 			</div>
-
-
-
-
-
-
-
-
-
 		</div>
+
+
+
+		<div id="placeholder">
+		</div>
+
 	</div>
+
 
 	<dialog class="customLink uploader" id="customLink">
 		<h1 id="dialtitle">
@@ -97,7 +87,7 @@
 		</form>
 	</dialog>
 
-	<dialog class="customLink uploader" id="uploader" >
+	<dialog class="customLink uploader" id="uploader">
 		Upload the file
 		<br>
 		<br>
@@ -128,7 +118,7 @@
 
 
 
-	
+
 
 </body>
 
