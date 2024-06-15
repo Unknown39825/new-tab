@@ -31,7 +31,7 @@ class CustomItem extends HTMLElement {
         this.innerHTML = `
             <li class="item">
             <a href="${this.getAttribute("link")}" >
-				<i class="item-icon fa-solid ${this.getAttribute('icon')}"></i>
+				<i class="item-icon  ${this.getAttribute('icon')}"></i>
 				<span class="item-text">${this.getAttribute("text")}</span>
 
 			</a>

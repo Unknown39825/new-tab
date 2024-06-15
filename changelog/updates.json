@@ -1,7 +1,7 @@
 {
     "1.0":[
         "Basic Static Page",
-        "https://chrome.google.com/webstore/detail/fast-new-tab-redirect/ohnfdmfkceojnmepofncbddpdicdjcoi?hl=en"
+        "Download Chrome Extenstion here : <a href='https://chrome.google.com/webstore/detail/fast-new-tab-redirect/ohnfdmfkceojnmepofncbddpdicdjcoi?hl=en'>Chrome Extension</a>"
     ],
     "1.1":[
         "Basic static page with only one editable section",
@@ -17,5 +17,9 @@
         "Add new Panels",
         "Icons configration in config.json",
         "Theme configration enabled"
+    ],
+    "2.0":[
+        "Font Awesome Integration",
+        "Search Bar Integartion"
     ]
 }

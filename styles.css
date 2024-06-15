@@ -16,7 +16,7 @@
 	--text-color: #e0e0e0;
 	--border-color: #333333;
 	--hover-color: linear-gradient(-45deg, #00000000 10%, #00000080);
-	--font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+		--font-family: Tahoma, Geneva, sans-serif;
 	--font-size: 18px;
 	--logo-opacity: 10%;
 	--padding: 20px;
@@ -34,14 +34,25 @@ html,
 body {
 	height: 100% -110px !important;
 	width: 100%  !important;
-}
-
-body {
 	font-family: var(--font-family);
+		color: var(--text-color);
 }
 
-body,
-h1 {
+a {
+	color: var(--text-color);
+	text-decoration: none;
+}
+
+input {
+	font-family: var(--font-family);
+	padding: 5px 2px;
+	background-color: var(--background-gradient);
+	border: 2px solid var(--text-color);
+	color: var(--text-color);
+	border-radius: 5px;
+}
+
+input::placeholder {
 	color: var(--text-color);
 }
 
@@ -104,7 +115,7 @@ custom-column {
 	vertical-align: top;
 }
 
-.column-title {
+.column-title  {
 	margin-bottom: 7px;
 	align-items: center;
 	justify-items: center;
@@ -112,13 +123,19 @@ custom-column {
 	/* display: flex; */
 }
 
+h1.column-title , .column-title h1 {
+	font-size: 24px;
+	margin-top: 5px;
+	margin-bottom: 6px;
+	margin-left: 0px;
+}
+
 .column-title a {
 	text-decoration: none;
 	color: inherit;
 }
 
-.column-title h1 {
-	font-size: 25px;
+.column-title  {
 	margin-top: 0px;
 	margin-bottom: 6px;
 	margin-left: 0px;
@@ -228,8 +245,9 @@ span.item-text {
 
 .header {
 	bottom: 100%;
-	margin-bottom: 20px;
 	display: grid;
+	width: 80%;
+	margin: 20px auto;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
@@ -239,6 +257,7 @@ h1 {
 
 .form-search {
 	display: inline-flex;
+	width: 100%;
 	align-items: center;
 	justify-content: center;
 	margin: 4px 4px;
@@ -248,7 +267,9 @@ h1 {
 	border-width: 1px;
 	border-radius: 4px;
 	padding: 3px 0px 3px 6px;
-	width: 160px;
+	/* width: 160px; */
+	width: 80%;
+	align-self: center;
 }
 
 .buttonCustom,
@@ -335,6 +356,12 @@ h1 {
 	color: white;
 }
 
+#changelogDismiss{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
 .deleteIcon {
 	/* font-size: var(--font-size); */
 }
@@ -349,4 +376,23 @@ h1 {
 .dark-theme .fa-moon,
 .light-theme .fa-sun {
 	display: none !important;
+}
+
+.configButtons{
+	/* background-color: red; */
+	/* width: 10% !important; */
+	display: flex;
+	justify-content: space-around;
+}
+
+.footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	color: var(--text-color);
+	text-align: center;
+}
+
+.footer a {
+	color: var(--text-color);
 }

@@ -74,7 +74,7 @@ function displayData(changelog, oldversion, newversion) {
       document.getElementById("changelog").appendChild(v);
       changelog[version].forEach((update) => {
         const u = document.createElement("li");
-        u.textContent = update;
+        u.innerHTML = update;
         document.getElementById("changelog").appendChild(u);
       });
       document.getElementById("changelog").showModal();
@@ -91,25 +91,34 @@ function addCustomLink() {
   var link = document.getElementById("clink").value;
   var text = document.getElementById("ctext").value;
 
-const components = JSON.parse(localStorage.getItem("components"));
- if(dialog.type=="link") {
-   const new_link = {
-     link: link,
-     text: text,
-     icon: getImageUrl(link),
-   };
-   components[id].items.push(new_link);
-} else if(dialog.type=="panel") {
-	const new_link = {
-		link: link,
-		title: text,
-		gridItems: 1,
-		items: [],
-	};
-	components.push(new_link);
-}
+  const components = JSON.parse(localStorage.getItem("components"));
+  if (dialog.type == "link") {
+    const new_link = {
+      link: link,
+      text: text,
+      icon: getImageUrl(link),
+    };
+    components[id].items.push(new_link);
+  } else if (dialog.type == "panel") {
+    const new_link = {
+      link: link,
+      title: text,
+      gridItems: 1,
+      items: [],
+    };
+    components.push(new_link);
+  } else if (dialog.type == "search") {
+    const searches = JSON.parse(localStorage.getItem("searchConfig")) || [];
 
-	localStorage.setItem("components", JSON.stringify(components));
+    const new_link = {
+      title: text,
+      baseUrl: link,
+    };
+    searches.push(new_link);
+    localStorage.setItem("searchConfig", JSON.stringify(searches));
+  }
+
+  localStorage.setItem("components", JSON.stringify(components));
   getLinks();
 }
 
@@ -126,10 +135,10 @@ async function getDefaultConfig() {
 function downloadConfig() {
   // give the localstorage json
   const components = JSON.parse(localStorage.getItem("components"));
-  const linkconfig = JSON.parse(localStorage.getItem("linkconfig"));
+  const linkConfig = JSON.parse(localStorage.getItem("linkConfig"));
 
   const config = {
-    linkconfig,
+    linkConfig,
     components,
   };
 
@@ -162,10 +171,10 @@ function uploadConfig() {
   const reader = new FileReader();
   reader.onload = function () {
     const config = JSON.parse(reader.result);
-    if (!config.components || !config.linkconfig)
+    if (!config.components || !config.linkConfig)
       return alert("Invalid config");
     // localStorage.setItem('config', reader.result);
-    localStorage.setItem("linkconfig", JSON.stringify(config.linkconfig));
+    localStorage.setItem("linkConfig", JSON.stringify(config.linkConfig));
     localStorage.setItem("components", JSON.stringify(config.components));
     getLinks();
   };
@@ -174,21 +183,31 @@ function uploadConfig() {
 
 function loadDefaults() {
   localStorage.clear("components");
-  localStorage.clear("linkconfig");
+  localStorage.clear("linkConfig");
+  localStorage.clear("searchConfig");
   getLinks();
 }
 
 async function getLinks() {
   document.getElementById("placeholder").innerHTML = "";
+  document.getElementById("header2").innerHTML = "";
   // get the components.json
   if (!localStorage.getItem("components")) {
     const configration = await getDefaultConfig();
     localStorage.setItem("components", JSON.stringify(configration.components));
   }
 
-  if (!localStorage.getItem("linkconfig")) {
+  if (!localStorage.getItem("linkConfig")) {
     const configration = await getDefaultConfig();
-    localStorage.setItem("linkconfig", JSON.stringify(configration.linkconfig));
+    localStorage.setItem("linkConfig", JSON.stringify(configration.linkConfig));
+  }
+
+  if (!localStorage.getItem("searchConfig")) {
+    const configration = await getDefaultConfig();
+    localStorage.setItem(
+      "searchConfig",
+      JSON.stringify(configration.searchConfig)
+    );
   }
 
   const components = JSON.parse(localStorage.getItem("components")) || [];
@@ -201,6 +220,15 @@ async function getLinks() {
     col.gridItems = component.gridItems;
     col.componentId = index;
     document.getElementById("placeholder").appendChild(col);
+  });
+
+  const searchConfig = JSON.parse(localStorage.getItem("searchConfig")) || [];
+
+  searchConfig.forEach((component, index) => {
+    const col = document.createElement("search-form");
+    col.title = component.title;
+    col.baseUrl = component.baseUrl;
+    document.getElementById("header2").appendChild(col);
   });
 }
 
@@ -228,7 +256,7 @@ function toggleTheme() {
 
 function showAddLink(componentId) {
   const dialog = document.getElementById("customLink");
-  dialog.type="link"
+  dialog.type = "link";
   dialog.componentId = componentId;
   dialog.showModal();
 }
@@ -236,19 +264,26 @@ function showAddLink(componentId) {
 function showAddPanel() {
   const dialog = document.getElementById("customLink");
   // dialog.componentId = componentId;
-  dialog.type="panel"
+  dialog.type = "panel";
   dialog.querySelector("#dialtitle").textContent = "Add Panel";
   dialog.showModal();
 }
 
+function showAddSearch() {
+  const dialog = document.getElementById("customLink");
+  // dialog.componentId = componentId;
+  dialog.type = "search";
+  dialog.querySelector("#dialtitle").textContent = "Add Search";
+  dialog.querySelector("#clink").placeholder = "Base URL";
+  dialog.showModal();
+}
+
 function getImageUrl(link) {
-  const config = JSON.parse(localStorage.getItem("linkconfig")) || [];
+  const config = JSON.parse(localStorage.getItem("linkConfig")) || [];
   for (const keyword in config) {
-    if (link?.includes(keyword)) {
+    if (link && link.toLowerCase().includes(keyword.toLowerCase())) {
       return config[keyword];
     }
-
-    return "fa-link";
   }
 
   return config.default;

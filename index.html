@@ -23,6 +23,7 @@
 		crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 	<script src="./components/column.js" type="module"></script>
+	<script src="./components/form.js" type="module"></script>
 </head>
 
 <body unselectable="on">
@@ -40,12 +41,6 @@
 
 		<div class="topHeader">
 			<div class="header" id="header2">
-				<!-- <form class="form-search" action="" method="get" id="inside_search">
-						<input type="text" name="k" class="search-query" placeholder="Inside Search" />
-					</form> -->
-
-
-
 
 
 			</div>
@@ -60,9 +55,11 @@
 				<button onclick="toggleRemoveButtons()" style="display: inline" class="buttonCustom"> <i
 						class="fa-solid fa-trash deleteIcon"></i>Remove
 					Links</button>
-
 				<button onclick="showAddPanel()" style="display: inline" class="buttonCustom"> <i
 						class="fa-solid fa-plus"></i> Add Panel</button>
+
+				<button onclick="showAddSearch()" style="display: inline" class="buttonCustom"> <i
+						class="fa-solid fa-search"></i> Add Search</button>
 			</div>
 		</div>
 
@@ -110,12 +107,14 @@
 
 	<dialog class="customLink uploader" id="changelog">
 		<h1>Feature Updates</h1>
-		<button id="changelogDismiss" class="buttonCustom1">X</button>
+		<button id="changelogDismiss" class="buttonCustom1"><i class="fa-solid fa-close" ></i></button>
 		<br>
 
 	</dialog>
 
-
+	<div class="footer">
+		Made with <i class="fa-solid fa-heart"></i> by <a href="https://www.github.com/unknown39825">unknown39825</a>
+	</div>
 
 
 

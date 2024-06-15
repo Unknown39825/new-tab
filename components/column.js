@@ -47,9 +47,9 @@ class CustomColumn extends HTMLElement {
     render() {
         this.innerHTML = `
                 <div class="column-title">
-					<a href="${this.link}">
-                    <h1>${this.title}</h1><i class="fa-solid ${this.icon}"></i>
-					</a>
+					
+                    <h1>${this.title}</h1>
+				
                     <button id="removeComponent" class="buttonCustom buttonCustomVisible">
                     <i class="fa-solid fa-trash deleteIcon"></i>
                     </button>

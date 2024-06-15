@@ -1,77 +1,246 @@
 {
+  "searchConfig": [
+    {
+      "baseUrl": "https://www.google.com/search?q=",
+      "title": "Google"
+    },
+    {
+      "baseUrl": "https://stackoverflow.com/search?q=",
+      "title": "Stack Overflow"
+    },
+    {
+      "baseUrl": "https://developer.mozilla.org/en-US/search?q=",
+      "title": "MDN Web Docs"
+    },
+    {
+      "baseUrl": "https://pkg.go.dev/search?q=",
+      "title": "Go Packages"
+    },
+    {
+      "baseUrl": "https://www.npmjs.com/search?q=",
+      "title": "NPM"
+    },
+    {
+      "baseUrl": "https://www.github.com/search?q=",
+      "title": "GitHub"
+    },
+    {
+      "baseUrl": "https://www.rubydoc.info/search?q=",
+      "title": "RubyDoc"
+    },
+    {
+      "baseUrl": "https://docs.microsoft.com/en-us/search/?search=",
+      "title": "Microsoft Docs"
+    }
+  ],
   "components": [
     {
-      "title": "Section 1",
+      "title": "Node",
       "link": "fa-link",
       "items": [
-        {
-          "text": "Item 1",
-          "link": "fa-link"
+          {
+          "text": "Node.js Official",
+          "link": "https://nodejs.org/"
         },
         {
-          "text": "Item 2",
-          "link": "fa-link"
+          "text": "Node.js Guides",
+          "link": "https://nodejs.dev/learn"
         },
-
+        {
+          "text": "NPM",
+          "link": "https://www.npmjs.com/"
+        },
+        {
+          "text": "Express.js",
+          "link": "https://expressjs.com/"
+        },
+        {
+          "text": "Koa.js",
+          "link": "https://koajs.com/"
+        },
+        {
+          "text": "NestJS",
+          "link": "https://nestjs.com/"
+        },
         {
           "isHtml": true,
-          "content": "<hr class=\"sub-content\">"
+          "content": "<h1 class='column-title'>JavaScript</h1> <hr/>"
         },
         {
-          "text": "Item 3",
-          "link": "fa-link"
+          "text": "MDN JavaScript",
+          "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+        },
+        {
+          "text": "JavaScript Info",
+          "link": "https://javascript.info/"
+        },
+        {
+          "text": "JavaScript Tutorial",
+          "link": "https://www.w3schools.com/js/"
+        },
+        {
+          "text": "ECMAScript 6 Guide",
+          "link": "https://www.ecma-international.org/ecma-262/6.0/"
+        },
+        {
+          "text": "Lodash",
+          "link": "https://lodash.com/"
+        },
+        {
+          "text": "Moment.js",
+          "link": "https://momentjs.com/"
+        }
+      ]
+    },
+
+    {
+      "title": "Go Resources",
+      "link": "fa-link",
+      "items": [
+        {
+          "text": "Go Official",
+          "link": "https://golang.org/"
+        },
+        {
+          "text": "Effective Go",
+          "link": "https://golang.org/doc/effective_go.html"
+        },
+        {
+          "text": "Go by Example",
+          "link": "https://gobyexample.com/"
+        },
+        {
+          "text": "Go Packages",
+          "link": "https://pkg.go.dev/"
+        },
+        {
+          "text": "Gin",
+          "link": "https://github.com/gin-gonic/gin"
+        },
+        {
+          "text": "Echo",
+          "link": "https://echo.labstack.com/"
         }
       ]
     },
     {
-      "title": "Section 2",
-      "gridItems": 2,
+      "title": "Python",
       "link": "fa-link",
       "items": [
         {
-          "text": "Item 1",
-          "link": "fa-link"
+          "text": "Python Official",
+          "link": "https://www.python.org/"
         },
         {
-          "text": "Item 2",
-          "link": "fa-link"
+          "text": "Python Docs",
+          "link": "https://docs.python.org/3/"
         },
-
         {
-          "text": "Item 3",
-          "link": "fa-link"
+          "text": "Flask",
+          "link": "https://flask.palletsprojects.com/"
+        },
+        {
+          "text": "Django",
+          "link": "https://www.djangoproject.com/"
+        },
+        {
+          "text": "PyPI",
+          "link": "https://pypi.org/"
+        },{
+          "isHtml": true,
+          "content": "<h1 class='column-title'>Ruby</h1> <hr/>"
+        },
+         {
+          "text": "Ruby Official",
+          "link": "https://www.ruby-lang.org/"
+        },
+        {
+          "text": "Ruby on Rails",
+          "link": "https://rubyonrails.org/"
+        },
+        {
+          "text": "RubyGems",
+          "link": "https://rubygems.org/"
+        },
+        {
+          "text": "Sinatra",
+          "link": "http://sinatrarb.com/"
+        }
+      ]
+    },
+   
+    {
+      "title": "Java Resources",
+      "link": "fa-link",
+      "items": [
+        {
+          "text": "Java Official",
+          "link": "https://www.oracle.com/java/"
+        },
+        {
+          "text": "Spring Framework",
+          "link": "https://spring.io/projects/spring-framework"
+        },
+        {
+          "text": "Maven",
+          "link": "https://maven.apache.org/"
+        },
+        {
+          "text": "Gradle",
+          "link": "https://gradle.org/"
         }
       ]
     },
     {
-      "title": "Section 3",
-      "gridItems": 2,
+      "title": "Development Tools",
       "link": "fa-link",
       "items": [
         {
-          "text": "Item 1",
-          "link": "fa-link"
+          "text": "GitHub",
+          "link": "https://github.com/"
         },
         {
-          "text": "Item 2",
-          "link": "fa-link"
+          "text": "GitLab",
+          "link": "https://gitlab.com/"
         },
-
         {
-          "text": "Item 3",
-          "link": "fa-link"
+          "text": "Jira",
+          "link": "https://www.atlassian.com/software/jira"
+        },
+        {
+          "text": "Confluence",
+          "link": "https://www.atlassian.com/software/confluence"
+        },
+        {
+          "text": "Travis CI",
+          "link": "https://travis-ci.org/"
+        },
+        {
+          "text": "CircleCI",
+          "link": "https://circleci.com/"
+        },
+        {
+          "text": "Docker",
+          "link": "https://www.docker.com/"
+        },
+        {
+          "text": "Kubernetes",
+          "link": "https://kubernetes.io/"
         }
       ]
     }
   ],
-  "linkconfig": {
-    "confluence": "fa-atlassian",
-    "atlassian": "fa-atlassian",
-    "github": "fa-github",
-    "sharepoint": "fa-sharepoint",
-    "jira": "fa-jira",
-    "gecko": "fa-bug",
-    "yammer": "fa-comments",
-    "default": "fa-link"
+  "linkConfig": {
+    "javascript": "fa-brands fa-js",
+    "ruby": "fa-solid fa-gem",
+    "node": "fa-brands fa-node",
+    "go": "fa-solid fa-code",
+    "python": "fa-brands fa-python",
+    "java": "fa-brands fa-java",
+    "github": "fa-brands fa-github",
+    "gitlab": "fa-brands fa-gitlab",
+    "confluence": "fa-brands fa-confluence",
+    "docker": "fa-brands fa-docker",
+    "default": "fa-solid fa-link"
   }
 }
