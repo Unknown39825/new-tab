@@ -49,13 +49,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 async function showChageLog() {
   try {
-    const response = await fetch("manifest.json");
+    const response = await fetch("./manifest.json");
     const data = await response.json();
     const oldversion = localStorage.getItem("version");
     const version = data.version;
     console.log(oldversion, version);
     if (oldversion < version) {
-      const response = await fetch("changelog/updates.json");
+      const response = await fetch("./changelog/updates.json");
       const data = await response.json();
       displayData(data, oldversion, version);
     }

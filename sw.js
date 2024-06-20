@@ -1,12 +1,13 @@
 // Cache name
-const cacheName = "v1";
+const cacheName = "v2";
 
 // Files to cache
 const cacheAssets = [
-  "index.html",
-  'style.css',
+   '/',
+  "/index.html",
+  '/styles.css',
   "/manifest.json",
-  "/js/components.js",
+  "/js/components.json",
   "/js/script.js",
   "/components/column.js",
   "/components/form.js",
@@ -15,7 +16,6 @@ const cacheAssets = [
 ];
 
 // cache will provide offline access to the app
-
 self.addEventListener("install", (e) => {
   console.log("Service Worker: Installed");
 
@@ -51,5 +51,9 @@ self.addEventListener("activate", (e) => {
 // Call Fetch Event
 self.addEventListener("fetch", (e) => {
   console.log("Service Worker: Fetching");
-  e.respondWith(fetch(e.request).catch(() => caches.match(e.request)));
+  try {
+    e.respondWith(fetch(e.request).catch(() => caches.match(e.request)));
+  } catch (error) {
+    console.log("Error fetching", error);
+  }
 });
